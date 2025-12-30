@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Divine Kashi | Spiritual Varanasi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    h1, h2 { font-family: 'Cinzel', serif; }
+    #shloka span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#shloka {
+  text-shadow: 0 0 20px rgba(255, 153, 51, 0.4);
+  letter-spacing: 0.25em;
+}
+   .welcome-line {
+  text-shadow: 0 0 18px rgba(255, 153, 51, 0.35);
+}
+
+  </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<body class="bg-gradient-to-b from-purple-950 via-black to-purple-900 text-white">
+  <!-- Three.js Divine Background -->
+<canvas id="divineCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+<canvas id="gangaCanvas" class="fixed top-0 left-0 w-full h-full -z-20"></canvas>
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl text-orange-400 tracking-wider">🕉 Divine Kashi</h1>
+    <ul class="hidden md:flex space-x-8 text-sm">
+      <li class="hover:text-orange-400 cursor-pointer">Home</li>
+      <li class="hover:text-orange-400 cursor-pointer">Map</li>
+      <li class="hover:text-orange-400 cursor-pointer">Temples</li>
+      <li class="hover:text-orange-400 cursor-pointer">History</li>
+    </ul>
+  </div>
+</nav>
+<!-- IMAGE CAROUSEL -->
+<div class="h-full">
+    <section class="relative w-full h-screen overflow-hidden carousel-section">
+
+  <!-- Slides -->
+  <div id="carousel" class="absolute inset-0 flex transition-transform duration-1000">
+
+    <div class="min-w-full h-full bg-cover bg-center"
+      style="background-image: url('/img/aditya-prakash-rJcakYQpxkw-unsplash.jpg');"></div>
+
+    <div class="min-w-full h-full bg-cover bg-center"
+      style="background-image: url('/img/pratish-srivastava-Iu06T6z2vRE-unsplash.jpg');"></div>
+
+    <div class="min-w-full h-full bg-cover bg-center"
+      style="background-image: url('/img/shiv-prasad-OPWM488DfeQ-unsplash.jpg');"></div>
+
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Text on Carousel -->
+<!-- Text on Carousel -->
+<div class="absolute inset-0 flex items-center justify-center text-center px-6 z-10">
+  <div id="welcome-text">
+
+    <h2 class="welcome-line text-3xl md:text-5xl text-orange-400 mb-4 opacity-0">
+      Welcome to Sacred Kashi
+    </h2>
+
+    <p class="welcome-line text-gray-200 text-lg mb-6 opacity-0">
+      Where devotion meets eternity
+    </p>
+
+    <!-- SHLOKA -->
+    <p id="shloka"
+       class="text-orange-300 text-xl tracking-widest opacity-0">
+      काश्यां हि मरणं मुक्तिः
+    </p>
+
+  </div>
+</div>
+
+
+
+</section>
+</div>
+
+<!-- HERO SECTION -->
+<section class="py-24 flex items-center justify-center text-center px-6 z-10">
+  <div class="max-w-4xl ">
+    <h1 class="text-4xl md:text-6xl mb-6 text-orange-400">
+      काशी — जहाँ शिव स्वयं वास करते हैं
+    </h1>
+    <p class="text-gray-300 text-lg mb-8">
+      Experience the eternal spiritual energy of Varanasi — temples, ghats, and divine history.
+    </p>
+
+    <div class="flex justify-center gap-4">
+      <button class="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-full text-black font-medium transition">
+        🔱 Explore Temples
+      </button>
+      <button class="px-6 py-3 border border-orange-400 rounded-full hover:bg-orange-400 hover:text-black transition">
+        🗺️ View Map
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT KASHI -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl text-orange-400 mb-4">Why Kashi is Eternal</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto">
+      Kashi is not just a city — it is a spiritual gateway. Believed to be untouched by time,
+      this sacred land grants liberation to the soul.
+    </p>
+  </div>
+</section>
+
+<!-- HISTORY SECTION -->
+<div class="grid md:grid-cols-2 gap-12 p-10">
+
+  <!-- BABA VISHWANATH CARD -->
+  <div class="history-card group backdrop-blur-xl bg-white/5
+              border border-white/10 rounded-2xl overflow-hidden
+              transition-all duration-500">
+
+    <!-- IMAGE -->
+    <div class="relative h-80 overflow-hidden">
+      <img src="img/df6b08b8-3edc-47a7-af86-7c45550a076a.jpg"
+           class="w-full h-full object-cover scale-105
+                  group-hover:scale-110 transition duration-700" />
+
+      <!-- GLOW OVERLAY -->
+      <div class="absolute inset-0 bg-orange-400/10"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="p-8 relative">
+      <span class="absolute -top-6 right-6 text-orange-400 text-4xl">🔱</span>
+
+      <h3 class="text-2xl text-orange-400 mb-4">
+        Baba Vishwanath
+      </h3>
+
+      <p class="text-gray-300 leading-relaxed">
+        Baba Vishwanath is the eternal Jyotirlinga of Lord Shiva.
+        दर्शन in Kashi is believed to grant liberation from the cycle of rebirth.
+      </p>
+
+      <p class="mt-4 text-gray-400 italic text-sm">
+        “काशी में मृत्यु भी मोक्ष है”
+      </p>
+
+      <button class="mt-6 text-orange-400 hover:underline">
+        Read Full History →
+      </button>
+    </div>
+  </div>
+
+  <!-- KAL BHAIRAV CARD -->
+  <div class="history-card group backdrop-blur-xl bg-white/5
+              border border-white/10 rounded-2xl overflow-hidden
+              transition-all duration-500">
+
+    <!-- IMAGE -->
+    <div class="relative h-80 overflow-hidden">
+      <img src="img/60b0f238-7058-4697-8535-ece1feb4539b.jpg"
+           class="w-full h-full object-cover scale-105
+                  group-hover:scale-110 transition duration-700" />
+
+      <!-- GLOW OVERLAY -->
+      <div class="absolute inset-0 bg-purple-500/10"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="p-8 relative">
+      <span class="absolute -top-6 right-6 text-orange-400 text-4xl">🐕</span>
+
+      <h3 class="text-2xl text-orange-400 mb-4">
+        Kal Bhairav
+      </h3>
+
+      <p class="text-gray-300 leading-relaxed">
+        Kal Bhairav is the Kotwal of Kashi — the divine guardian.
+        No stay or ritual in Varanasi is complete without his permission.
+      </p>
+
+      <p class="mt-4 text-gray-400 italic text-sm">
+        “काशी का कोतवाल — काल भैरव”
+      </p>
+
+      <button class="mt-6 text-orange-400 hover:underline">
+        Know the Legend →
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- CTA -->
+<section class="text-center  my-40 py-20 bg-gradient-to-r from-orange-500/10 to-purple-500/10">
+  <h2 class="text-3xl text-orange-400 mb-4">Begin Your Divine Journey</h2>
+  <p class="text-gray-300 mb-6">Explore temples, sacred routes, and spiritual history.</p>
+  <button class="px-8 py-3 bg-orange-500 hover:bg-orange-600 rounded-full text-black font-medium">
+    Start Exploring 🕉️
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-6 text-gray-400 text-sm">
+  © 2025 Divine Kashi • Designed with devotion 🕉️
+</footer>
+<script>
+  const canvas = document.getElementById('divineCanvas');
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  camera.position.z = 5;
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    alpha: true
+  });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+
+  // PARTICLES
+  const particlesCount = 800;
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(particlesCount * 3);
+
+  for (let i = 0; i < particlesCount * 3; i++) {
+    positions[i] = (Math.random() - 0.5) * 20;
+  }
+
+  geometry.setAttribute(
+    'position',
+    new THREE.BufferAttribute(positions, 3)
+  );
+
+  const material = new THREE.PointsMaterial({
+    color: 0xffa500, // saffron
+    size: 0.03,
+    transparent: true,
+    opacity: 0.6
+  });
+
+  const particles = new THREE.Points(geometry, material);
+  scene.add(particles);
+
+  // ANIMATION SEEKS CALM
+  function animate() {
+    requestAnimationFrame(animate);
+    particles.rotation.y += 0.0005;
+    particles.rotation.x += 0.0003;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // RESPONSIVE
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
+<script>
+  const carousel = document.getElementById('carousel');
+  let index = 0;
+  const slides = carousel.children.length;
+
+  setInterval(() => {
+    index = (index + 1) % slides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }, 4000);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const canvas = document.getElementById("gangaCanvas");
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(
+    -1, 1, 1, -1, 0, 1
+  );
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setPixelRatio(devicePixelRatio);
+
+  const geometry = new THREE.PlaneGeometry(2, 2);
+
+  const material = new THREE.ShaderMaterial({
+    transparent: true,
+    uniforms: {
+      u_time: { value: 0.0 },
+      u_color: { value: new THREE.Color(0x3b1d5a) } // deep ganga purple
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      varying vec2 vUv;
+      uniform float u_time;
+      uniform vec3 u_color;
+
+      void main() {
+        float wave1 = sin((vUv.y + u_time * 0.08) * 12.0) * 0.02;
+        float wave2 = sin((vUv.x + u_time * 0.05) * 10.0) * 0.02;
+
+        float alpha = 0.15 + wave1 + wave2;
+        gl_FragColor = vec4(u_color, alpha);
+      }
+    `
+  });
+
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    material.uniforms.u_time.value += 0.01;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener("resize", () => {
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+});
+</script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.fromTo(
+  ".welcome-line",
+  {
+    y: 40,
+    opacity: 0,
+    filter: "blur(6px)"
+  },
+  {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    duration: 1.6,
+    ease: "power3.out",
+    stagger: 0.25,
+    delay: 0.6
+  }
+);
+gsap.registerPlugin(ScrollTrigger);
+
+// SPLIT SHLOKA INTO LETTERS
+const shloka = document.getElementById("shloka");
+const text = shloka.innerText;
+shloka.innerHTML = "";
+
+[...text].forEach(char => {
+  const span = document.createElement("span");
+  span.textContent = char === " " ? "\u00A0" : char;
+  shloka.appendChild(span);
+});
+
+// WELCOME TEXT ANIMATION
+gsap.fromTo(
+  ".welcome-line",
+  { y: 40, opacity: 0, filter: "blur(6px)" },
+  {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    duration: 1.6,
+    ease: "power3.out",
+    stagger: 0.25,
+    delay: 0.6
+  }
+);
+
+// SHLOKA LETTER REVEAL
+gsap.to("#shloka span", {
+  scrollTrigger: {
+    trigger: "#carousel-section",
+    start: "top center",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.8,
+  stagger: 0.08,
+  ease: "power3.out",
+  delay: 1.8
+});
+</script>
+
+
+</body>
+</html>
